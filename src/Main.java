@@ -11,14 +11,14 @@ public class Main {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) throws IOException {
-        /*Código usado paracrear el archivo Animal.dat
+        /*Código usado para crear el archivo Animal.dat
 
-        Animal a1 = new Perro("Rojo", "Shiba","Grande", 6, "Corto","Hembra", "Larga", "Arriba");
-        Animal a2 = new Perro("Fuego y negro", "Shiba","Grande", 4, "Corto","Macho", "Larga", "Arriba");
-        Animal a3 = new Perro("Negro y dorado", "Yorkshire","Pequeño", 3, "Corto","Hembra", "Corta", "Arriba");
+        Animal a1 = new Perro("Rojo", "Shiba","Grande", 6, "Hembra","Corto", "Larga", "Arriba");
+        Animal a2 = new Perro("Fuego y negro", "Shiba","Grande", 4, "Macho","Corto", "Larga", "Arriba");
+        Animal a3 = new Perro("Negro y dorado", "Yorkshire","Pequeño", 3, "Hembra","Corto", "Corta", "Arriba");
         Animal a4 = new Gato("Negro", "Europeo común","Grande", 14,"Corto", "Macho");
-        Animal a5 = new Gato("Naranja", "Persa","Pequeño", 2,"Largo", "Macho");
-        Animal a6 = new Gato("Negro", "Siamés","Pequeño", 5,"Corto", "Hembra");
+        Animal a5 = new Gato("Naranja", "Persa","Pequeño", 2,"Macho", "Largo");
+        Animal a6 = new Gato("Negro", "Siamés","Pequeño", 5,"Hembra", "Corto");
 
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("Animales.dat"));
 
@@ -97,6 +97,7 @@ public class Main {
 
                             if (animal_List.contains(auxAnimal)){
                                 caja_Actual.retirarDinero(PRECIO_MAYORISTA_GATO);
+                                System.out.println("El saldo actual de caja es" + caja_Actual.getCaja());
                             }else{
                                 System.out.println("No se ha comprado ningún gato");
                             }
@@ -123,6 +124,7 @@ public class Main {
                                 animal_List.remove(auxAnimal);
                                 System.out.println("Se ha vendido el animal correctamente");
                                 caja_Actual.añadirDinero(auxAnimal.precioBase());
+                                System.out.println("El saldo de caja actual es " + caja_Actual.getCaja());
                                 animalEncontrado = true;
                                 break;
                             }
